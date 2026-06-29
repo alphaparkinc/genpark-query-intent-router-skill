@@ -1,0 +1,34 @@
+{
+  "name": "genpark-query-intent-router-skill",
+  "description": "GenPark query intent routing skill. Scans natural language buyer queries, performs pattern-matching confidence classification, and outputs optimal target endpoints.",
+  "version": "1.0.0",
+  "author": "alphaparkinc",
+  "inputs": {
+    "user_query": {
+      "type": "string"
+    },
+    "routing_registry": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "intent": { "type": "string" },
+          "target_endpoint": { "type": "string" },
+          "keywords": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["intent", "target_endpoint", "keywords"]
+      }
+    }
+  },
+  "outputs": {
+    "matched_intent": {
+      "type": "string"
+    },
+    "confidence_score": {
+      "type": "number"
+    },
+    "dispatch_url": {
+      "type": "string"
+    }
+  },
+  "prompt": "You are a GenPark routing agent. Match {{user_query}} keyword structures against the {{routing_registry}}, compute classification confidence and return the dispatch endpoints."
+}
