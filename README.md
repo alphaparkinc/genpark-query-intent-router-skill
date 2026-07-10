@@ -1,4 +1,4 @@
-# GenPark Query Intent Router Skill
+# genpark-query-intent-router-skill
 
 This repository contains the **GenPark Query Intent Router Skill** — an agent configuration skill config (`skill.json`), a production-ready Python SDK client (`intent_router.py`), and executable verification tests. It is designed to evaluate incoming user queries, classify intent categories based on keyword weighting models, and dispatch payloads to matched target endpoints.
 
